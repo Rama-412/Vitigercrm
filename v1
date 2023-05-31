@@ -1,0 +1,36 @@
+package practise;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class p12 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver p=new ChromeDriver();
+		p.manage().window().maximize();
+		p.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		p.get("https://www.facebook.com/signup");
+		WebElement day = p.findElement(By.id("day"));
+        Select s=new Select(day);
+        List<WebElement> d = s.getOptions();
+        for(WebElement sa:d)
+         s.selectByVisibleText("8");
+        WebElement year = p.findElement(By.id("month"));
+        Select s2=new Select(year);
+        List<WebElement> y = s2.getOptions();
+        for(WebElement sb:y)
+        s.selectByVisibleText("10");
+        		
+        		
+       
+
+	}
+
+}
